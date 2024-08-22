@@ -8,7 +8,7 @@ export const Dashboard = () => {
 
     const counterRef = useRef(0);
 
-    const {nomeDoUsuario} = useUsuarioLogado();
+    const { nomeDoUsuario, logout } = useUsuarioLogado();
 
     return(
         <div>
@@ -20,6 +20,7 @@ export const Dashboard = () => {
 
               <button onClick={() => counterRef.current++}>Somar</button>
               <button onClick={() => console.log(counterRef.current)}>Logar</button>
+              <button onClick={logout}>Logout</button>
 
             <Link to="/login">Login</Link>
         </div>

@@ -1,7 +1,7 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { InputLogin, ButtonLogin} from './components/Export_Components'
-import { useUsuarioLogado } from '../../shared/hooks';
+import { useUsuarioLogado } from '../../shared/hooks'
 
 
 
