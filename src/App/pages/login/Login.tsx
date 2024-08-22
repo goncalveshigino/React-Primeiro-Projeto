@@ -1,10 +1,13 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { InputLogin, ButtonLogin} from './components/Export_Components'
+import { UsuarioLogadoContext } from '../../shared/contexts';
 
 
 
 export const Login = () => {
+
+   const {nomeDoUsuario} = useContext(UsuarioLogadoContext);
 
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('')
@@ -25,6 +28,7 @@ export const Login = () => {
       <div>
          <form>
             <p>Quantidade de caracteres no email: {emailLength}</p>
+            <p>{nomeDoUsuario}</p>
 
             <InputLogin
                label="Email"
