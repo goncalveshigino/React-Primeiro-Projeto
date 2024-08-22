@@ -1,8 +1,11 @@
 import { Routes } from "./routes";
+import { UsuarioLogadoProviderProps } from "./shared/contexts";
 
 export const App = () => {
   return (
-   < Routes />
+    <UsuarioLogadoProviderProps>
+         < Routes />
+    </UsuarioLogadoProviderProps>
   );
 }
 
