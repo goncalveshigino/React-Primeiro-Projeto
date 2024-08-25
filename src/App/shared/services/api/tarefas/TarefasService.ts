@@ -1,7 +1,7 @@
 import { Api } from "../ApiConfig"
 import { ApiException } from "../ApiException";
 
-interface ITarefa {
+export interface ITarefa {
     id: number
     title: string;
     isCompleted: boolean;
@@ -46,7 +46,7 @@ const updateById = async (id: number, dataToUpdate: ITarefa): Promise<ITarefa | 
 
 const deleteById = async (id: number): Promise<undefined | ApiException> => {
     try {
-
+        //await Api().get(`/tarefas/${id}`)
         await Api().delete(`/tarefas/${id}`)
         return undefined
     } catch (error: any) {
