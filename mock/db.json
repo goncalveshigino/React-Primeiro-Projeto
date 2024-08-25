@@ -9,6 +9,11 @@
       "id": 2,
       "title": "Tarefa 02",
       "isCompleted": false
+    },
+    {
+      "id": 3,
+      "title": "Luis Katiava",
+      "isCompleted": false
     }
   ]
 }

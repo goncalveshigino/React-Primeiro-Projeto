@@ -16,6 +16,8 @@ export const Dashboard = () => {
             }
         })
     }, [])
+
+
     
     const handleInputKeyDown: React.KeyboardEventHandler<HTMLInputElement> = useCallback((event) => {
       if (event.key === 'Enter') {
@@ -24,18 +26,18 @@ export const Dashboard = () => {
         const value = event.currentTarget.value;
         event.currentTarget.value = ''
 
-       
-        setLista((oldLista) => {
-            if (oldLista.some((listItem) => listItem.title === value)) return oldLista;
+        if (lista.some((listItem) => listItem.title === value)) return;
 
-            return [...oldLista, {
-                id: oldLista.length,
-                title: value, 
-                isCompleted: false
-            }]
-        })
+        TarefasService.create({title: value, isCompleted: false})
+            .then((result) => {
+                if(result instanceof ApiException) {
+                    alert(result.message);
+                } else {
+                    setLista((oldLista) => [...oldLista, result])
+                }
+            });
       }
-    }, [])
+    }, [lista])
 
     return(
         <div>
